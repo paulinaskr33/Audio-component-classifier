@@ -1,4 +1,4 @@
-#### Inga Dyląg, Paulina Skrzypczak, Karolina Źróbek
+### Inga Dyląg, Paulina Skrzypczak, Karolina Źróbek
 
 Sztuczna Inteligencja w Systemach Informatycznych 2024
 
