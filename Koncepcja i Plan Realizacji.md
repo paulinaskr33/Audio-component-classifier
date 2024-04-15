@@ -10,7 +10,7 @@ Celem projektu jest stworzenie klasyfikatora komponentów audio, który będzie 
 
 ### Metody
 1. **Uczenie nienadzorowane do rozdzielania komponentów audio**: Wykorzystamy algorytm Independent Component Analysis (FastICA) z pakietu scikit-learn. FastICA jest techniką która pozwala na rozdzielenie sygnału na jego składowe niezależne.
-
+![Blind source separation using FastICA](https://scikit-learn.org/stable/_images/sphx_glr_plot_ica_blind_source_separation_001.png)
 2. **Deep Learning do klasyfikacji**: Do klasyfikacji wykorzystamy głębokie sieci neuronowe. Przetestujemy dwie architektury:
    - **Convolutional 2D (Conv2D)**: Warstwy konwolucyjne są efektywne w analizie obrazów i mogą być również skuteczne w analizie spektrogramów dźwiękowych.
    - **Long Short-Term Memory (LSTM)**: LSTM jest rodzajem rekurencyjnej sieci neuronowej, która jest efektywna w analizie sekwencji danych, co może być przydatne w przypadku analizy sekwencji dźwięków.
