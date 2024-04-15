@@ -16,7 +16,7 @@ Celem projektu jest stworzenie klasyfikatora komponentów audio, który będzie 
    - **Long Short-Term Memory (LSTM)**: LSTM jest rodzajem rekurencyjnej sieci neuronowej, która jest efektywna w analizie sekwencji danych, co może być przydatne w przypadku analizy sekwencji dźwięków.
 
 ### Biblioteka do przetwarzania audio
-Do przetwarzania audio użyjemy biblioteki [Kapre]. Zalety korzystania z Kapre to:
+Do przetwarzania audio użyjemy biblioteki [Kapre](https://github.com/keunwoochoi/kapre). Zalety korzystania z Kapre to:
 - Możliwość optymalizacji parametrów przetwarzania sygnału,
 - Szybkość i łatwość użycia,
 - Odporność na błędy,
