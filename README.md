@@ -2,7 +2,9 @@
 
 ## Repositiry structure
 ```
-|- data/ <- directory can be used to store data during model training, also it can be used to store example data needed for notebooks
+|- data/ <- directory can be used to store data during model training,
+|   |       also it can be used to store example data needed for notebooks
+|   |
 |   |-- interim/ <- Intermediate data that has been transformed
 |   |-- processed/ <- The final, canonical data sets for modeling
 |   |--raw/ <- The original, immutable data dump
