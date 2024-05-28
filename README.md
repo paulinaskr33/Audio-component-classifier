@@ -15,3 +15,16 @@
 |   |-- audio_classifier
 |   |-- audio_components_extractor
 ```
+
+## Preparation
+1. First init and update submodules:
+
+  ```bash
+  git submodule init && git submodule update
+  ```
+2. [Download weights](https://huggingface.co/spaces/Audio-AGI/AudioSep/tree/main/checkpoint) for Separate Anything You Describe model and place them inside `src/AudioSep/checkpoint/`.
+
+3. Install requirements:
+```bash
+pip install -r requirements.txt
+```
