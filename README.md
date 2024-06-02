@@ -16,15 +16,32 @@
 |   |-- audio_components_extractor
 ```
 
-## Preparation
+## Preparation (will be simplified in the future)
 1. First init and update submodules:
 
   ```bash
   git submodule init && git submodule update
   ```
-2. [Download weights](https://huggingface.co/spaces/Audio-AGI/AudioSep/tree/main/checkpoint) for Separate Anything You Describe model and place them inside `src/AudioSep/checkpoint/`.
+2. Create dir `src/AudioSep/checkpoint`
+3. [Download weights](https://huggingface.co/spaces/Audio-AGI/AudioSep/tree/main/checkpoint) for Separate Anything You Describe model and place them inside `src/AudioSep/checkpoint/`.
 
-3. Install requirements:
+4. In src/AudioSep/models/clap_encoder.py **replace line**:
+``` python
+pretrained_path='checkpoint/music_speech_audioset_epoch_15_esc_89.98.pt',
+```
+with
+``` python
+pretrained_path='AudioSep/checkpoint/music_speech_audioset_epoch_15_esc_89.98.pt',
+```
+
+5. Install requirements:
 ```bash
 pip install -r requirements.txt
 ```
+
+## Running the pipeline 
+In `data/raw` place audiofiles to be tagged (mixed audio).
+
+In `data/sound_classes.txt` write sound source classes you wish to be recognized in the audio. Place each class in a separate line.
+
+Change directory to `src` and run `main.py`.

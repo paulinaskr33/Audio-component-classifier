@@ -21,7 +21,8 @@ def cut_wav_file(input_file, output_dir, segment_length_ms = 2000, shift_length_
         start_time = i * shift_length_ms
         end_time = start_time + segment_length_ms
         segment = audio[start_time:end_time]
-        output_file = os.path.join(output_dir, f"segment_{i + 1}.wav")
+        input_file_name = os.path.basename(input_file)
+        output_file = os.path.join(output_dir, f"{os.path.splitext(input_file_name)[0]}_segment_{i + 1}.wav")
         segment.export(output_file, format="wav")
         output_files.append(output_file)
         
