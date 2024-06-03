@@ -1,6 +1,41 @@
 from pydub import AudioSegment
 import os
 
+def cut_audio_chunk(input_file, output_dir, segment_start_ms, segment_length_ms=2000):
+    """
+    Cuts out a segment of length `segment_length_ms` starting at `segment_start_ms` from the input WAV file.
+    
+    Args:
+    - input_file (str): Path to the input WAV file.
+    - output_dir (str): Directory to save the output segment.
+    - segment_length_ms (int): Length of the segment to cut out in milliseconds. Default is 2000 ms (2 seconds).
+    - segment_start_ms (int): Starting point of the segment in milliseconds. Default is 200 ms.
+    
+    Returns:
+    - output_file (str): Path to the output WAV file containing the cut segment.
+    """
+    # Load the audio file
+    audio = AudioSegment.from_wav(input_file)
+    
+    # Calculate the end time of the segment
+    end_time = segment_start_ms + segment_length_ms
+    
+    # Cut out the segment
+    segment = audio[segment_start_ms:end_time]
+    
+    # Create output directory if it doesn't exist
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    
+    # Define the output file path
+    input_file_name = os.path.basename(input_file)
+    output_file = os.path.join(output_dir, f"{os.path.splitext(input_file_name)[0]}_{segment_start_ms}.wav")
+    
+    # Export the segment
+    segment.export(output_file, format="wav")
+    
+    return output_file
+
 def cut_wav_file(input_file, output_dir, segment_length_ms = 2000, shift_length_ms=200):
     # Load the audio file
     audio = AudioSegment.from_wav(input_file)
