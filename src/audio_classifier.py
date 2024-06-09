@@ -5,12 +5,13 @@ This is an example using CLAP for zero-shot inference.
 """
 from msclap import CLAP
 import torch.nn.functional as F
+import torch.cuda
 
 class AudioClassifier():
   def __init__(self) -> None:
     # Load and initialize CLAP
     # Setting use_cuda = True will load the model on a GPU using CUDA
-    self.clap_model = CLAP(version = '2023', use_cuda=False)
+    self.clap_model = CLAP(version = '2023', use_cuda=torch.cuda.is_available())
     
   def predict(self, classes, audio_files ):
     # Add prompt
@@ -41,7 +42,7 @@ if __name__ == '__main__':
 
   clf = AudioClassifier()
 
-  values, indices = clf.classify(classes, audio_files)
+  values, indices = clf.predict(classes, audio_files)
   # Print the results
   print("Ground Truth: {}".format(ground_truth))
   print("Top predictions:\n")

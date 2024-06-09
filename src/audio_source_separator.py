@@ -3,9 +3,14 @@ import sys
 from pathlib import Path
 from typing import List
 import torch
+import subprocess
+
+
+
 
 class SeparateAudio:
     def __init__(self, output_dir):
+        
         # Define output directory relative to the script's directory
         self.output_directory = Path(__file__).resolve().parent / output_dir
         self.output_directory.mkdir(parents=True, exist_ok=True)
@@ -13,16 +18,18 @@ class SeparateAudio:
         
         # Define the checkpoints directory
         self.checkpoints_dir = Path(__file__).resolve().parent / "AudioSep" / "checkpoint"
+        if not os.path.exists(self.checkpoints_dir):
+            os.makedirs(self.checkpoints_dir)
+       
 
         # Save the original sys.path
         self.original_sys_path = sys.path.copy()
-        
-        # Add the AudioSep as githubmodule directory to sys.path
-        githubmodule_dir = self.checkpoints_dir.parent
-        sys.path.insert(0, str(githubmodule_dir))
-        
-        # import from AudioSep needs to be made from here because of the sys path changes
-        from AudioSep.pipeline import build_audiosep
+    
+
+        # =================== change directory to AudioSep =======================
+        # Add AudioSep to sys.path
+        module_dir = self.checkpoints_dir.parent
+        sys.path.insert(0, str(module_dir))
 
         models = (
             (
@@ -35,33 +42,49 @@ class SeparateAudio:
             )
         )
 
+        
+        # Check if model weights are downloaded
+        # if not donwload them
+        for model_url, model_path in models:
+            if not model_path.exists():
+                print(f"No AudioSep model weights found for {model_path}. Downloading now...")
+                # Example command: list the contents of the current directory on Windows
+                command = f"wget {model_url} -O {model_path}"
+                # Run the command
+                result = subprocess.run(command, capture_output=True, text=True, shell=True)
+                # Print the output
+                print(result.stdout)
+        
+        # import from AudioSep needs to be made from here because of the sys path changes
+        from AudioSep.pipeline import build_audiosep
+
         self.model = build_audiosep(
-            config_yaml=str(githubmodule_dir / 'config/audiosep_base.yaml'),
+            config_yaml=str(module_dir / 'config/audiosep_base.yaml'),
             checkpoint_path=str(models[0][1]),
             device=self.device
         )
 
+        # =================== change directory to src =======================
         # Restore the original sys.path
         sys.path = self.original_sys_path
 
-    def separate(self, file_paths: List[str], sounds_to_separate: List[str]) -> List[str]:
+    def separate(self, audio_samples, output_file_prefix, sounds_to_separate ) -> List[str]:
         # Save the original sys.path
         original_sys_path = sys.path.copy()
         
-        # Add the AudioSep as githubmodule directory to sys.path
-        githubmodule_dir = self.checkpoints_dir.parent
-        sys.path.insert(0, str(githubmodule_dir))
+        # Add the AudioSep as module directory to sys.path
+        module_dir = self.checkpoints_dir.parent
+        sys.path.insert(0, str(module_dir))
         
         # import from AudioSep needs to be made from here because of the sys path changes
         from AudioSep.pipeline import separate_audio
         
         result_files = []
 
-        for input_file_path in file_paths:
-            input_file_name = os.path.basename(input_file_path)
+        for audio in audio_samples:
             for sound in sounds_to_separate:
-                output_file = self.output_directory / f"{os.path.splitext(input_file_name)[0]}_{sound.replace(' ', '_')}.wav"
-                separate_audio(self.model, input_file_path, sound, str(output_file), self.device)
+                output_file = self.output_directory / f"{output_file_prefix}_{sound}.wav"
+                separate_audio(self.model, audio, sound, str(output_file), self.device)
                 result_files.append(str(output_file))
 
         # Restore the original sys.path
