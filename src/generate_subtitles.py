@@ -25,10 +25,6 @@ def format_milliseconds(milliseconds):
 def generate_subitles(tagging_data, output_file_name, output_dir = "."):
 
     output_file_name = output_file_name + ".srt"
-
-    tagging_data = sorted(tagging_data)
-    print(tagging_data)
-
     output_file_path = os.path.join(output_dir,output_file_name)
 
     with open(output_file_path, 'w') as subtitles_file:

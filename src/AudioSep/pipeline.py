@@ -17,10 +17,10 @@ def build_audiosep(config_yaml, checkpoint_path, device):
     print(f'Loaded AudioSep model from [{checkpoint_path}]')
     return model
 
-def separate_audio(model, mixture, text, output_file, device='cuda', use_chunk=False):
+def separate_audio(model, audio_file, text, output_file, device='cuda', use_chunk=True):
+    mixture, fs = librosa.load(audio_file, sr=32000, mono=True)
     with torch.no_grad():
         text = [text]
-
         conditions = model.query_encoder.get_query_embed(
             modality='text',
             text=text,
