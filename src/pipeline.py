@@ -23,15 +23,8 @@ def load_model(model_class, *args):
 
 def process_audio_chunk(audio_chunk_file, sep, clf, classes):
     logging.info(f"Processing audio chunk: {audio_chunk_file}")
-    with ThreadPoolExecutor() as inner_executor:
-        future_separated_samples = []
-        for class_label in classes:
-            future_separated_samples.append(inner_executor.submit(
-                sep.separate, [audio_chunk_file], class_label))
-        for sep_sample_task in as_completed(future_separated_samples):
-            sep_sample_task.result()
-            
-    values, indices = clf.predict(classes, future_separated_samples)
+    separated_files = sep.separate( [audio_chunk_file], classes)
+    values, indices = clf.predict(classes, separated_files)
     results = {class_name: 0 for class_name in classes}
     for value, index in zip(values, indices):
         results[classes[index]] = 100 * value.item()
@@ -63,22 +56,16 @@ def audio_tagging(data_dir, classes):
 
         futures = []
         for audio_file in audio_files:
-            audio_path = os.path.join(raw_data_dir, audio_file)
-            audio_segment = AudioSegment.from_wav(audio_path)
-            audio_duration_ms = len(audio_segment)
-            for chunk_start in range(0, audio_duration_ms, 500):
-                audio_chunk = cut_audio_chunk(
-                    audio_path, interim_data_dir, chunk_start)
-                futures.append(executor.submit(
-                    process_audio_chunk, audio_chunk, sep, clf, classes))
+            futures.append(executor.submit(
+                    process_audio_chunk, audio_file, sep, clf, classes))
 
         # Initialize an empty DataFrame with columns for filename and each class
         df = pd.DataFrame(columns=['filename'] + classes)
 
         # Collect results and append to DataFrame
         for future in as_completed(futures):
-            audio_chunk_file, results = future.result()
-            row = {'filename': audio_chunk_file}
+            audio_file, results = future.result()
+            row = {'filename': audio_file}
             row.update(results)
             df = df.append(row, ignore_index=True)
 
