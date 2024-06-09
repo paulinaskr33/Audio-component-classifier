@@ -1,47 +1,40 @@
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1hKc2AH5miyDkNVUemvtu7PHIyhpnTmiT?usp=sharing)
+
 # Audio-component-classifier
 
-## Repositiry structure
-```
-|- data/ <- directory can be used to store data during model training,
-|   |       also it can be used to store example data needed for notebooks
-|   |
-|   |-- interim/ <- Intermediate data that has been transformed
-|   |-- processed/ <- The final, canonical data sets for modeling
-|   |--raw/ <- The original, immutable data dump
-|
-|- notebooks/ - stores jupyter notebooks with examples and implementation details
-|  
-|- src/ - stores python files (model implementation and data prep)
-|   |-- audio_classifier
-|   |-- audio_components_extractor
-```
+![pipeline](notebooks/data/img/pipeline.png)
 
-## Preparation (will be simplified in the future)
-1. First init and update submodules:
+## About
+This project tackles the challenge of recognizing various sounds simultaneously within a single audio recording. Inspired by the "cocktail party problem," our approach combines audio classification with techniques for separating mixed audio sources.
 
-  ```bash
-  git submodule init && git submodule update
-  ```
-2. Create dir `src/AudioSep/checkpoint`
-3. [Download weights](https://huggingface.co/spaces/Audio-AGI/AudioSep/tree/main/checkpoint) for Separate Anything You Describe model and place them inside `src/AudioSep/checkpoint/`.
+The proposed method involves:
 
-4. In src/AudioSep/models/clap_encoder.py **replace line**:
-``` python
-pretrained_path='checkpoint/music_speech_audioset_epoch_15_esc_89.98.pt',
-```
-with
-``` python
-pretrained_path='AudioSep/checkpoint/music_speech_audioset_epoch_15_esc_89.98.pt',
-```
+1. Extracting audio from video using `moviepy`.
+2. Segmenting the audio into smaller chunks using a predefined time window.
+3. Separating audio components within each chunk using the [Separate Anything You Describe model](https://github.com/Audio-AGI/AudioSep) and leveraging AudioSep, a natural language-based sound separation approach.
+4. Classifying the separated components using [Microsoft's CLAP model](https://github.com/microsoft/CLAP), which utilizes contrastive language to categorize audio based on pre-trained text-audio relationships.
+5. Generating video subtitles with audio captions using the SubRipper (.srt) format.
 
-5. Install requirements:
+This framework enables the identification of multiple sounds within a complex audio scene, facilitating applications like automated audio annotation and content indexing.
+
+## Preparation
+1. Clone the reposotory and install dependencies:
+
 ```bash
-pip install -r requirements.txt
+  git clone https://github.com/paulinaskr33/Audio-component-classifier
+```
+```bash 
+  pip install torchlibrosa==0.1.0 gradio==3.47.1 gdown lightning ftfy braceexpand webdataset soundfile wget h5py transformers==4.28.1 && \
+  pip install msclap
 ```
 
-## Running the pipeline 
-In `data/raw` place audiofiles to be tagged (mixed audio).
+## Generating subtitles (TODO)
+(to be added python packedge wrapper)
 
-In `data/sound_classes.txt` write sound source classes you wish to be recognized in the audio. Place each class in a separate line.
+## Examples 
+See Google Colab notebook for example use. 
 
-Change directory to `src` and run `main.py`.
+
+## Acknowledgements
+- Liu, X., Kong, Q., Zhao, Y., Liu, H., Yuan, Y., Liu, Y., Xia, R., Wang, Y., Plumbley, M. D., & Wang, W. (2023). Separate anything you describe. [https://doi.org/10.48550/ARXIV.2308.05037](https://doi.org/10.48550/ARXIV.2308.05037)
+- Elizalde, B., Deshmukh, S., Ismail, M. A., & Wang, H. (2023). Clap learning audio concepts from natural language supervision. ICASSP 2023 - 2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 1–5.[https://doi.org/10.1109/ICASSP49357.2023.10095889](https://doi.org/10.1109/ICASSP49357.2023.10095889)
