@@ -28,11 +28,9 @@ This framework enables the identification of multiple sounds within a complex au
   pip install msclap
 ```
 
-## Generating subtitles (TODO)
-(to be added python packedge wrapper)
 
 ## Examples 
-See [Google Colab notebook](https://colab.research.google.com/drive/1hKc2AH5miyDkNVUemvtu7PHIyhpnTmiT?usp=sharing) for example use. 
+See Google Colab notebook for example use. 
 
 
 ## Acknowledgements

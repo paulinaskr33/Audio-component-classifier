@@ -1,55 +1,710 @@
-Dog
-Rain
-Crying baby
-Door
-knock
-Helicopter
-Rooster
-Sea waves
-Sneezing
-Mouse click
-Chainsaw
-Pig
-Crackling fire
-Clapping
-Keyboard typing
-Siren
-Cow
-Crickets
-Breathing
-Door wood creaks
-Carhorn
-Frog
-Chirping birds
-Coughing
-Can opening
-Engine
-Cat
-Water drops
-Footsteps
-Washing machine
-Train
-Hen
-Wind
-Laughing
-Vacuum cleaner
-Church bells
-Insects flying
-Pouring water
-Brushing teeth
-Clock alarm
+A Capella
+Aardvark
+Accelerating
+Accordion
+Acoustic Guitar
+Afrobeat
+Air Brake
+Air Conditioning
+Air Horn
+Aircraft
+Aircraft Engine
 Airplane
-Sheep
-Toilet flush
-Snoring
-Clock tick
-Fireworks
+Airscrew
+Alarm
+Alarm Clock
+Ambient Music
+Ambulance (Siren)
+And Pans
+Angry Music
+Animal
+Antelope
+Applause
+Arrow
+Artillery Fire
+Auto Racing
+Babbling
+Baby Cry
+Baby Laughter
+Background Music
+Bagpipes
+Bang
+Banjo
+Bark
+Basketball Bounce
+Bass
+Bass Drum
+Bass Guitar
+Bathtub (Filling Or Washing)
+Battle Cry
+Bear
+Beatboxing
+Bee
+Beep
+Bell
+Bellow
+Belly Laugh
+Bicycle
+Bicycle Bell
+Bird
+Bird Call
+Bird Flight
+Bird Song
+Bird Vocalization
+Biting
+Bleat
+Bleep
+Blender
+Bluegrass
+Blues
+Boar
+Boat
+Boiling
+Boing
+Boom
+Bouncing
+Bovinae
+Bow-Wow
+Bowed String Instrument
+Brass Instrument
+Breaking
+Breathing
+Buffalo
+Burping
+Burst
+Bus
+Busy Signal
+Buzz
+Buzzer
+Cacophony
+Calf
+Camera
+Canidae
+Canoe
+Cap Gun
+Car
+Car Alarm
+Car Horn
+Car Passing By
+Carnatic Music
+Carp
+Cash Register
+Cat
+Caterwaul
+Catfish
+Cattle
+Cavy
+Caw
+Cello
+Chainsaw
+Change Ringing (Campanology)
+Chant
+Chatter
+Cheering
+Cheetah
+Chewing
+Chicken
+Chicken
+Child Singing
+Child Speech
+Children Playing
+Children Shouting
+Chime
+Chink
+Chirp
+Chirp Tone
+Choir
+Chop
+Chopping (Food)
+Chortle
+Chorus Effect
+Christian Music
+Christmas Music
+Chub
+Chuckle
+Church Bell
+Civil Defense Siren
+Clam
+Clang
+Clapping
+Clarinet
+Classical Music
+Clatter
+Clickety-Clack
+Clicking
+Clink
+Clip-Clop
+Clock
+Cluck
+Cock-A-Doodle-Doo
+Coin (Dropping)
+Computer Keyboard
+Conversation
+Coo
+Cough
+Country
+Cowbell
+Crab
+Crack
+Crackle
+Crash
+Crayfish
+Creak
+Cricket
+Crinkling
+Croak
 Crow
-Thunderstorm
-Drinking sipping
-Glass breaking
-Hand saw
-Pneumatic hammer
-Monkey
+Crow
+Crowd
+Crowing
+Crumpling
+Crunch
+Crushing
+Crying
+Cupboard Open Or Close
+Cutlery
+Cymbal
+Dance Music
+Deer
+Dental Drill', "Dentist'S Drill", 'Dial Tone
+Didgeridoo
+Ding
+Ding-Dong
+Disco
+Dishes
+Distortion
+Dog
+Dogfish
+Dogs
+Dolphin
+Domestic Animals
+Door
+Doorbell
+Double Bass
+Dove
+Dove
+Drawer Open Or Close
+Dribble
+Drill
+Drip
+Drum
+Drum And Bass
+Drum Kit
+Drum Machine
+Drum Roll
+Dtmf
+Dubstep
+Duck
+Duck
+Echo
+Effects Unit
+Electric Guitar
+Electric Piano
+Electric Razor
+Electric Shaver
+Electric Toothbrush
+Electric Windows
+Electronic Dance Music
+Electronic Music
+Electronic Organ
+Electronic Tuner
+Electronica
 Elephant
+Emergency Vehicle
+Engine
+Engine Knocking
+Engine Starting
+Environmental Noise
+Eructation
+Eruption
+Etc.
+Exciting Music
+Explosion
+Farm Animals
+Fart
+Faucet
+Female Singing
+Female Speech
+Fiddle
+Field Recording
+Filing (Rasp)
+Fill (With Liquid)
+Finger Snapping
+Fire
+Fire Alarm
+Fire Engine
+Fire Truck (Siren)
+Firecracker
+Fireworks
+Fixed-Wing Aircraft
+Flamenco
+Flamingo
+Flap
+Flapping Wings
+Flea
+Flute
+Fly
+Foghorn
+Folk Music
+Footsteps
+Fowl
+French Horn
+Frog
+Frog
+Frog
+Fruitbat
+Frying (Food)
+Funk
+Funny Music
+Fusillade
+Gargling
+Gasp
+Gears
+Giggle
+Giraffe
+Girl
+Glass
+Glockenspiel
+Gnat
+Goat
+Goat
+Gobble
+Gong
+Goose
+Gorilla
+Gospel Music
+Groan
+Growling
+Grunge
+Grunt
+Guitar
+Gull
+Gunfire
+Gunshot
+Gurgling
+Gush
+Haddock
+Hair Dryer
+Hammer
+Hammond Organ
+Hamster
+Hands
+Happy Music
+Hare
+Harmonic
+Harmonica
+Harp
+Harpsichord
+Hawk
+Heart Murmur
+Heart Sounds
+Heartbeat
+Heavy Engine (Low Frequency)
+Heavy Metal
+Helicopter
+Herring
+Hi-Hat
+Hiccup
+Hip Hop Music
+Hiss
+Honeybee
+Honk
+Honking
+Hoot
+Horse
+House Music
+Housefly
+Housefly
+Howl
+Hubbub
+Hum
+Humming
+Ice Cream Truck
+Ice Cream Van
+Idling
+Independent Music
+Infant Cry
+Insect
+Inside
+Jackhammer
+Jazz
+Jet Engine
+Jingle
+Jingle (Music)
+Jingle Bell
+Kayak
+Keyboard (Musical)
+Keys Jangling
+Kid Speaking
+Kiwi
+Knock
+Ladybird
+Large Room Or Hall
+Lark
+Laughter
+Lawn Mower
+Leopard
+Light Engine (High Frequency)
 Lion
+Liquid
+Livestock
+Lobster
+Lullaby
+Lynx
+Machine Gun
+Mains Hum
+Male Singing
+Male Speech
+Mallet Percussion
+Man Speaking
+Mandolin
+Mantra
+Maraca
+Marimba
+Mastication
+Mechanical Fan
+Mechanisms
+Medium Engine (Mid Frequency)
+Meow
+Metro
+Mice
+Microwave Oven
+Middle Eastern Music
+Mink
+Moan
+Mole
+Mongoose
+Monologue
+Moo
+Mosquito
+Moth
+Motor Vehicle (Road)
+Motorboat
+Motorcycle
+Mouse
+Music
+Music For Children
+Music Of Africa
+Music Of Asia
+Music Of Bollywood
+Music Of Latin America
+Musical Instrument
+Narration
+Neigh
+New-Age Music
+Newt
+Noise
+Ocean
+Octopus
+Oink
+Opera
+Opossum
+Orchestra
+Organ
+Oryx
+Ostrich
+Outside
+Owl
+Pant
+Parakeet
+Patter
+Pawl
+Penguin
+Percussion
+Pets
+Pheasant
+Piano
+Pig
+Pigeon
+Pike
+Ping
+Pink Noise
+Piranha
+Pitviper
+Pizzicato
+Platypus
+Plop
+Plucked String Instrument
+Polecat
+Police Car (Siren)
+Pony
+Pop
+Pop Music
+Porpoise
+Pots
+Pour
+Power Tool
+Power Windows
+Printer
+Progressive Rock
+Propeller
+Psychedelic Rock
+Public Space
+Pulleys
+Pulse
+Puma
+Pump (Liquid)
+Punk Rock
+Purr
+Pussycat
+Quack
+Raccoon
+Race Car
+Radio
+Rail Transport
+Railroad Car
+Rain
+Rain On Surface
+Raindrop
+Rapping
+Ratchet
+Rats
+Rattle
+Rattle (Instrument)
+Reggae
+Reindeer
+Reverberation
+Reversing Beeps
+Revving
+Rhea
+Rhythm And Blues
+Rimshot
+Ringtone
+Roadway Noise
+Roar
+Roaring Cats (Lions
+Rock And Roll
+Rock Music
+Rodents
+Roll
+Rooster
+Rowboat
+Rub
+Rumble
+Run
+Rural Or Natural
+Rustle
+Rustling Leaves
+Sad Music
+Sailboat
+Sailing Ship
+Salsa Music
+Sampler
+Sanding
+Sawing
+Saxophone
+Scary Music
+Scissors
+Scorpion
+Scrape
+Scratch
+Scratching (Performance Technique)
+Screaming
+Seahorse
+Seal
+Sealion
+Seasnake
+Seawasp
+Sewing Machine
+Shatter
+Sheep
+Ship
+Shofar
+Shout
+Shuffle
+Shuffling Cards
+Sidetone
+Sigh
+Silence
+Silverware
+Sine Wave
+Singing
+Singing Bowl
+Single-Lens Reflex Camera
+Sink (Filling Or Washing)
+Siren
+Sitar
+Sizzle
+Ska
+Skateboard
+Skidding
+Skimmer
+Skua
+Slam
+Slap
+Slide Guitar
+Sliding Door
+Slosh
+Slowworm
+Slug
+Smack
+Small Room
+Smash
+Smoke Alarm
+Smoke Detector
+Snake
+Snare Drum
+Sneeze
+Snicker
+Sniff
+Snoring
+Snort
+Sobbing
+Sole
+Sonar
+Song
+Soul Music
+Sound Effect
+Soundtrack Music
+Sparrow
+Speech
+Speech Babble
+Speech Noise
+Speech Synthesizer
+Speedboat
+Splash
+Splatter
+Splinter
+Spray
+Squawk
+Squeak
+Squeal
+Squirrel
+Squish
+Starfish
+Static
+Steam
+Steam Whistle
+Steel Guitar
+Steelpan
+Stingray
+Stir
+Stomach Rumble
+Stream
+String Section
+Strum
+Subway
+Surf
+Swan
+Swing Music
+Swish
+Swoosh
+Synthesizer
+Synthetic Singing
+Tabla
+Tambourine
+Tap
+Tapping (Guitar Technique)
+Tearing
+Techno
+Telephone
+Telephone Bell Ringing
+Telephone Dialing
+Television
+Tender Music
+Termite
+Theme Music
+Theremin
+Throat Clearing
+Throbbing
+Thud
+Thump
+Thunder
+Thunderstorm
+Thunk
+Thwack
+Tick
+Tick-Tock
+Tigers)
+Timpani
+Tinkle
+Tire Squeal
+Toad
+Toilet Flush
+Tools
+Toot
+Toothbrush
+Tortoise
+Traditional Music
+Traffic Noise
+Train
+Train Horn
+Train Wagon
+Train Wheels Squealing
+Train Whistle
+Trance Music
+Trickle
+Trombone
+Truck
+Truck Horn
+Trumpet
+Tuatara
+Tubular Bells
+Tuna
+Tuning Fork
+Turkey
+Tweet
+Typewriter
+Typing
+Ukulele
+Underground
+Urban Or Manmade
+Vacuum Cleaner
+Vampire
+Vehicle
+Vehicle Horn
+Vibraphone
+Vibration
+Video Game Music
+Violin
+Vocal Music
+Vole
+Vroom
+Vulture
+Wail
+Walk
+Wallaby
+Wasp
+Wasp
+Water
+Water Tap
+Water Vehicle
+Waterfall
+Waves
+Wedding Music
+Whack
+Whale Vocalization
+Wheeze
+Whimper
+Whimper (Dog)
+Whinny
+Whip
+Whir
+Whispering
+Whistle
+Whistling
+White Noise
+Whoop
+Whoosh
+Wild Animals
+Wind
+Wind Chime
+Wind Instrument
+Wind Noise (Microphone)
+Wolf
+Wolves
+Woman Speaking
+Wood
+Wood Block
+Woodwind Instrument
+Working Animals
+Worm
+Wren
+Writing
+Xylophone
+Yell
+Yip
+Yodeling
+Zing
+Zipper (Clothing)
+Zither

@@ -11,7 +11,7 @@ class AudioClassifier():
   def __init__(self) -> None:
     # Load and initialize CLAP
     # Setting use_cuda = True will load the model on a GPU using CUDA
-    self.clap_model = CLAP(version = '2023', use_cuda=torch.cuda.is_available())
+    self.clap_model = CLAP(version = '2023', use_cuda=True)
     
   def predict(self, classes, audio_files ):
     # Add prompt
@@ -23,12 +23,12 @@ class AudioClassifier():
 
     # compute the audio embeddings from an audio file
     audio_embeddings = self.clap_model.get_audio_embeddings(audio_files, resample=True)
-
+    
     # compute the similarity between audio_embeddings and text_embeddings
     similarity = self.clap_model.compute_similarity(audio_embeddings, text_embeddings)
 
     similarity = F.softmax(similarity, dim=1)
-    values, indices = similarity[0].topk(len(classes))
+    values, indices = similarity[0].topk(1)
 
     return values, indices
   
@@ -36,9 +36,9 @@ class AudioClassifier():
 if __name__ == '__main__':
   # Define classes for zero-shot
   # Should be in lower case and can be more than one word
-  classes = ['coughing','sneezing','drinking sipping', 'breathing', 'brushing teeth']
-  ground_truth = ['coughing']
-  audio_files = ["coughing.wav"]
+  classes = ['Monkey chirping', 'Elephant', 'Lion rawring', 'Clapping', 'Laughter','Footsteps']
+  ground_truth = ['Monkey']
+  audio_files = ["../data/raw/test_monkey.wav"]
 
   clf = AudioClassifier()
 

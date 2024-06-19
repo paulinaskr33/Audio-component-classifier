@@ -4,16 +4,14 @@ from pathlib import Path
 from typing import List
 import torch
 import subprocess
-
+import dill
 
 
 
 class SeparateAudio:
-    def __init__(self, output_dir):
+    def __init__(self):
         
-        # Define output directory relative to the script's directory
-        self.output_directory = Path(__file__).resolve().parent / output_dir
-        self.output_directory.mkdir(parents=True, exist_ok=True)
+        
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         
         # Define the checkpoints directory
@@ -47,7 +45,7 @@ class SeparateAudio:
         # if not donwload them
         for model_url, model_path in models:
             if not model_path.exists():
-                print(f"No AudioSep model weights found for {model_path}. Downloading now...")
+                print(f"\tNo AudioSep model weights found for {model_path}. Downloading now...")
                 # Example command: list the contents of the current directory on Windows
                 command = f"wget {model_url} -O {model_path}"
                 # Run the command
@@ -68,7 +66,11 @@ class SeparateAudio:
         # Restore the original sys.path
         sys.path = self.original_sys_path
 
-    def separate(self, audio_samples, output_file_prefix, sounds_to_separate ) -> List[str]:
+    def separate(self, audio_samples, output_dir, output_file_prefix, sounds_to_separate ) -> List[str]:
+        # Define output directory relative to the script's directory
+        output_directory = Path(__file__).resolve().parent / output_dir
+        output_directory.mkdir(parents=True, exist_ok=True)
+
         # Save the original sys.path
         original_sys_path = sys.path.copy()
         
@@ -83,10 +85,11 @@ class SeparateAudio:
 
         for audio in audio_samples:
             for sound in sounds_to_separate:
-                output_file = self.output_directory / f"{output_file_prefix}_{sound}.wav"
-                separate_audio(self.model, audio, sound, str(output_file), self.device)
+                label = sound.replace(" ", "_")
+                output_file = output_directory / f"{output_file_prefix}_{label}.wav"
+                separate_audio(self.model, audio, sound, str(output_file), self.device, use_chunk=False)
                 result_files.append(str(output_file))
-
+        print("\t audio samples processed")
         # Restore the original sys.path
         sys.path = original_sys_path
         
@@ -94,8 +97,5 @@ class SeparateAudio:
 
 # Example use:
 if __name__ == "__main__":
-    separator = SeparateAudio("../data/processed")
-    input_files = ["../data/raw/72a68fda.wav"]
-    sounds = ["billard", "ping-pong", "bar"]
-    result = separator.separate(input_files, sounds)
-    print("Output files:", result)
+    separator = SeparateAudio()
+    
